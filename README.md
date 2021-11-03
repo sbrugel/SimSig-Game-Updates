@@ -7,6 +7,7 @@ This is a Discord bot that scrapes [the SimSig website's upcoming games list](ht
 As this bot was not updated since June 2021, this still utilizes Discord.js v12, meaning that on newer installations of node/djs, the bot may not run. This is to be patched in a future commit.
 
 ## Setup
+*Please note you will require an installation of node.js to run the bot*
 1. A file named 'config-template.json' is included in this download. Rename this to 'config.json'.
 2. Go to your [Discord developer portal](https://discord.com/developers/applications) and create a new application.
 3. Enter the Bot tab and set up the bot. At this point, a token field will be present. Press the Copy button below it, and paste it into the config file, replacing "bot token". (Keep the double quotes for this, and for all copy-pastes into the config file)
@@ -14,3 +15,9 @@ As this bot was not updated since June 2021, this still utilizes Discord.js v12,
 5. To add the bot to the server, go to the OAuth2 section of the developer's page. Scroll to the bottom. Under Scopes, you must tick 'bot' and 'applications.commands'. Under Bot Permissions, tick 'Administrator'. Also ensure you enable BOTH privileged intents under the Bots section.
 6. This gives you a link to add the bot to any server you manage. Follow Discord's on screen instructions after copying this link into your browser.
 7. Open up command prompt, `cd` to the folder of the main.js file, and enter `node main.js`
+
+## Utilized Libraries
+- [discord.js](https://discord.js.org/#/)
+- [cron](https://www.npmjs.com/package/cron)
+- [cheerio](https://cheerio.js.org/)
+- request-promise (currently deprecated, a future update will replace this with a more up-to-date library)
