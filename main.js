@@ -15,12 +15,12 @@ client.once('ready', () => {
 
 client.login(config.TOKEN);
 
-var titles = [], start = [], startstring = [], host = [], details = [];
+let titles = [], start = [], startstring = [], host = [], details = [];
 
-var embedLoopIndex = 0;
-var date = new Date(); //the current date/time
+let embedLoopIndex = 0;
+let date = new Date(); //the current date/time
 
-var nearcount = 0;
+let nearcount = 0;
 
 async function main() {
     embedLoopIndex = 0;
@@ -31,7 +31,7 @@ async function main() {
     details = [];
 	nearcount = 0;
 
-    var iter = 0;
+    let iter = 0;
     /*
     0 - title of the game
     1 - start date & time
@@ -42,7 +42,7 @@ async function main() {
     const result = await rp.get(url);
     const $ = cheerio.load(result);
 
-    var test = 0;
+    let test = 0;
 
     $("table > tbody > tr > td").each((index, element) => {
         if (iter != 4 && iter != 1) {
@@ -55,14 +55,14 @@ async function main() {
             details.push("https://www.simsig.co.uk" + $(element).find("a[href]").attr('href'));
             test++;
         } else if (iter == 1) {
-            var datestring = $(element).text().trim();
-            var day = datestring.substring(0,2);
-            var year = datestring.substring(6,10);
-            var month = datestring.substring(2,6); //INCLUDES THE SLASHES!!!!!!!!
-            var rest = datestring.substring(10);
+            let datestring = $(element).text().trim();
+            let day = datestring.substring(0,2);
+            let year = datestring.substring(6,10);
+            let month = datestring.substring(2,6); //INCLUDES THE SLASHES!!!!!!!!
+            let rest = datestring.substring(10);
 
-            var newstring = year + month + day + rest;
-            var newdate = new Date(newstring);
+            let newstring = year + month + day + rest;
+            let newdate = new Date(newstring);
 
             start.push(newdate);
             startstring.push(newstring);
